@@ -10,5 +10,6 @@ jobs:
     public: true
     plan:
     - get: concourse101
+      trigger: true
     - task: install     
       file: concourse101/pipeline/install.yml
