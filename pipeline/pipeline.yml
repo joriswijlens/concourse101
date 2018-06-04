@@ -1,0 +1,14 @@
+resources:
+- name: concourse101      
+  type: git
+  source:
+    uri: https://github.com/smartworkx/concourse101.git
+    branch: master
+
+jobs:
+  - name: build
+    public: true
+    plan:
+    - get: concourse101
+    - task: install     
+      file: concourse101/pipeline/install.yml
